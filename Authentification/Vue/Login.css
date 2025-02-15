@@ -1,0 +1,98 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", serif;
+    font-optical-sizing: auto;
+    font-weight: 48px;
+    font-style: normal;
+}
+.Big_login{
+    display: flex;
+    height: 100vh;
+}
+.Big_login .img_singnin {
+    margin-left: 300px;
+    margin-top: 100px;
+}
+
+.Big_login .img_singnin img{
+    width: 600px;
+    height: 521.5px;
+}
+.Big_login .Formulaire{
+    height: 75vh;
+    padding: 10px;
+    margin-top: 100px;
+    background-color: #f0f8ff; /* Bleu très clair */
+
+}
+.Big_login .Formulaire span{
+    position: relative;
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+    top: 40px;
+    left: 90px;
+}
+.Big_login .Formulaire form{
+    position: relative;
+    top: 8%;
+}
+form {
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+    margin: 20px auto;
+    color: #333;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+  }
+  
+  input[type="email"],
+  input[type="password"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: solid 1px #4682B4;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Important pour éviter que le padding n'augmente la largeur */
+  }
+  
+  input[type="submit"] {
+    background-color: #4682B4; /* Bleu un peu plus foncé */
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: #2E5A88; /* Bleu encore plus foncé au survol */
+  }
+  
+  a {
+    color: #4682B4;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  div {
+    margin-bottom: 10px;
+  }
+  
+  p {
+    text-align: center;
+    margin-top: 15px;
+  }
