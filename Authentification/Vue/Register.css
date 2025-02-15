@@ -1,0 +1,112 @@
+/* Reset par défaut et styles globaux */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", serif;
+    font-optical-sizing: auto;
+    font-weight: 48px;
+    font-style: normal;
+}
+
+/* Conteneur principal */
+.Big_register {
+    display: flex;
+    height: 100vh;
+}
+
+/* Styles pour l'image */
+.Big_register .img_signup { /* Correction de l'erreur de frappe: img_singnin -> img_signup */
+    margin-left: 300px;
+    margin-top: 100px;
+}
+
+.Big_register .img_signup img {
+    width: 600px;
+    height: 521.5px;
+}
+
+/* Styles pour le formulaire */
+.Big_register .formulaire { /* Correction de l'erreur de frappe: Formulaire -> formulaire */
+    height: 83vh;
+    padding: 10px;
+    margin-top: 85px;
+    background-color: #f0f8ff; /* Bleu très clair */
+}
+
+.Big_register .formulaire span {
+    position: relative;
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+    top: 20px;
+    left: 90px;
+}
+
+.Big_register .formulaire form {
+    position: relative;
+    bottom: 3%;
+}
+
+/* Styles de base du formulaire */
+form {
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+    margin: 20px auto;
+    color: #333;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+/* Styles pour les champs de saisie (texte, email, mot de passe) */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #4682B4; /* Utilisation d'une seule déclaration border */
+    border-radius: 4px;
+    box-sizing: border-box; /* Important pour éviter que le padding n'augmente la largeur */
+}
+
+/* Styles pour le bouton submit */
+input[type="submit"] {
+    background-color: #4682B4; /* Bleu un peu plus foncé */
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #2E5A88; /* Bleu encore plus foncé au survol */
+}
+
+/* Styles pour les liens */
+a {
+    color: #4682B4;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Styles pour les div et paragraphes */
+div {
+    margin-bottom: 10px;
+}
+
+p {
+    text-align: center;
+    margin-top: 15px;
+}
