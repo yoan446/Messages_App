@@ -12,7 +12,7 @@
 <body>
     <div class="tete">
         <span>Chat Box</span>
-        <h3 id="nom_recepteur">Richard Bona</h3>
+        <h3 id="nom_recepteur">Destinataire</h3>
         <form action="" method="post">
             <button type="submit"><img src="../Images/exit.png" alt=""></button>
         </form>
@@ -21,10 +21,13 @@
         <div class="discussion">
             <input type="text" name="recherche" id="rechercche" placeholder="Rechercher un contact...">
 
-            <div class="contact">
-                <img src="../Images/user.png" alt="">
-                <span id="id_recepteur">Richard Bona</span>
-            </div>
+            <a href="#" id="charge">
+                <div class="contact" onclick="charger()">
+                    <img src="../Images/user.png" alt="">
+                    <span id="id_recepteur">Richard Bona</span>
+                    <h6 id="id_r">1</h6>
+                </div>
+            </a>
         </div>
 
         <div class="messages">
@@ -41,6 +44,8 @@
 
             <div class="saisie">
                 <form action="#" method="post">
+                    <input type="hidden" name="id_rf" id="id_rf">
+                    <input type="file" name="fichier" id="fichier">
                     <input type="text" name="ecrire" id="ecrire">
                     <button type="submit"><img src="../Images/paperplane.png" alt=""></button>
                 </form>
@@ -49,4 +54,5 @@
         </div>
     </div>  
 </body>
+<script src="./Message.js"></script>
 </html>
