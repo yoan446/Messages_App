@@ -1,5 +1,10 @@
 <?php
-//code php pour le controller
+// Démarrer la session si ce n'est pas déjà fait
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+
+include("../Modele/Connection.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
