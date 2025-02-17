@@ -31,11 +31,11 @@
                 </div>
 
                 <div>
-                    <input type="submit" value="Se connecter">
+                    <input type="submit" value="Se connecter" name="submit">
                 </div>
 
                 <div>
-                    <p>Pas encore de compte ? <a href="register.php">S'inscrire</a></p>
+                    <p>Pas encore de compte ? <a href="./Register.php">S'inscrire</a></p>
                 </div>
             </form>
         </div> 

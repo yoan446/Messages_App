@@ -1,3 +1,11 @@
+<?php
+// Démarrer la session si ce n'est pas déjà fait
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+
+include("../Controleur/Enregistrer.php")
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,7 +21,7 @@
         </div>
         <div class="formulaire">
             <span>Sign up</span>
-            <form action="#" method="post">
+            <form action="./Register.php" method="post">
                 <div>
                     <label for="nom">Nom:</label>
                     <input type="text" id="nom" name="nom" required>
@@ -40,7 +48,7 @@
                 </div>
 
                 <div>
-                    <input type="submit" value="S'inscrire">
+                    <input type="submit" value="S'inscrire" name="submit">
                 </div>
 
                 <div>
