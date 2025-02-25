@@ -4,7 +4,7 @@ if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
 
-include("../Modele/Connection.php");
+include("../Controleur/Signin.php")
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,7 +24,7 @@ include("../Modele/Connection.php");
         </div>
         <div class="Formulaire">
             <span>Sign in</span>
-            <form action="#" method="post">
+            <form action="./Login.php" method="post">
                 <div>
                     <label for="email">Email:</label>
                     <input type="email" id="email" name="email" required>
