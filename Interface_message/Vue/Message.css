@@ -145,6 +145,9 @@
     top: 30px;
 
 }
+.media{
+    text-align: center;
+}
 
 .saisie input[type="text"] {
     padding: 4px; /* Ajoute du rembourrage à l'input */

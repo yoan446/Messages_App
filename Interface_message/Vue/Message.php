@@ -33,6 +33,7 @@
         <div class="messages">
             <div class="chat">
                 <div class="envoyeur">
+                    <div class="media"><img src="" alt=""></div>
                     <span>Comment vous allez?</span>
                 </div>
 
@@ -45,9 +46,9 @@
             <div class="saisie">
                 <form action="#" method="post">
                     <input type="hidden" name="id_rf" id="id_rf">
-                    <input type="file" name="fichier" id="fichier">
+                    <input type="file" name="fichier" id="fichier" accept=".jpg, .jpeg, .png, .gif, .mp4, .webm">
                     <input type="text" name="ecrire" id="ecrire">
-                    <button type="submit"><img src="../Images/paperplane.png" alt=""></button>
+                    <button type="submit" name="submit"><img src="../Images/paperplane.png" alt=""></button>
                 </form>
             </div>
 
