@@ -1,5 +1,5 @@
 <?php
-$serverName = "LA-BASE\SQLEXPRESS"; 
+$serverName = "PC_YTIOMA\SQLSERVER"; 
 $database = "Gestion_Messagerie";
 
 
