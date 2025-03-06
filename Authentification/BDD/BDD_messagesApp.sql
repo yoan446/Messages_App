@@ -66,9 +66,23 @@ RETURN
     WHERE Email_utilisateur = @Email_utilisateur
 );
 
+--fonction pour afficher la liste des contacts
+CREATE FUNCTION charger_contact 
+(
+	@ID_utilisateur INT
+)
+RETURNS TABLE
+AS
+RETURN
+(
+	SELECT Nom_utilisateur, Prenom_utilisateur, ID_utilisateur
+	FROM Utilisateur
+	WHERE ID_utilisateur <> @ID_utilisateur AND Role_utilisateur <> 'Administrateur'
+);
+
 UPDATE Utilisateur
 SET MDP_utilisateur  = '$2y$10$xDfM8IiBCDTDwGADUlwpqOEv/V6D7rfybVTOdaq9WCA3GZmQUWRdS'
-WHERE Email_utilisateur = 'yoantioma4@gmail.com';
+WHERE Email_utilisateur = 'yoantioma4@gmail.com' ;
 
 USE Gestion_Messagerie;
 SELECT * FROM Utilisateur;
