@@ -1,3 +1,12 @@
+<?php
+// Démarrer la session si ce n'est pas déjà fait
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+
+//connection a la BDD
+include('../Controlleur/charger_contact.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,13 +30,19 @@
         <div class="discussion">
             <input type="text" name="recherche" id="rechercche" placeholder="Rechercher un contact...">
 
+            
+        <?php foreach ($contacts as $contact) {
+            ?>
             <a href="#" id="charge">
                 <div class="contact" onclick="charger()">
                     <img src="../Images/user.png" alt="">
-                    <span id="id_recepteur">Richard Bona</span>
-                    <h6 id="id_r">1</h6>
+                    <span id="id_recepteur"><?= $contact['Nom_utilisateur'] . ' ' . $contact['Prenom_utilisateur'] ?></span>
+                    <h6 id="id_r"><?= $contact['ID_utilisateur'] ?></h6>
                 </div>
             </a>
+            <?php
+        }?>
+
         </div>
 
         <div class="messages">

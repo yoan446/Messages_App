@@ -153,7 +153,7 @@
     padding: 4px; /* Ajoute du rembourrage à l'input */
     border: 1px solid #ccc; /* Bordure grise claire */
     border-radius: 4px; /* Coins arrondis */
-    width: 900px; /* Largeur de l'input, ajustez selon vos besoins */
+    width: 890px; /* Largeur de l'input, ajustez selon vos besoins */
     position: relative;
     bottom: 9px;
     padding: 7px;
@@ -162,11 +162,13 @@
 }
 
 .saisie button {
+    position: relative;
     background-color: transparent;
     border: none; /* Supprime la bordure par défaut */
     border-radius: 4px; /* Coins arrondis */
     cursor: pointer; /* Change le curseur en main au survol */
     padding: 10px; /* Ajoute du rembourrage au bouton */
+    right: 20px;
 }
 
 .saisie button img {
