@@ -25,10 +25,10 @@ if(isset($_POST['submit'])){
             $hashpassword = password_hash($password,PASSWORD_DEFAULT);
 
             //execution de la procedure
-            $sql= "EXEC dbo.enregistrer @Nom_utilisateur = :Nom_utlisateur,
+            $sql= "EXEC dbo.AjouterUtilisateur @Nom_utilisateur = :Nom_utlisateur,
                 @Prenom_utilisateur = :Prenom_utilisateur,
                 @Email_utilisateur = :Email_utlisateur,
-                @Mot_de_passe = :Mot_de_passe
+                @MDP_utilisateur = :MDP_utilisateur
             ";
             $stmt = $conn->prepare($sql);
 
@@ -36,12 +36,12 @@ if(isset($_POST['submit'])){
             $stmt->bindParam(':Nom_utlisateur', $nom, PDO::PARAM_STR);
             $stmt->bindParam(':Prenom_utilisateur', $prenom, PDO::PARAM_STR);
             $stmt->bindParam(':Email_utlisateur', $email, PDO::PARAM_STR);
-            $stmt->bindParam(':Mot_de_passe', $hashpassword, PDO::PARAM_STR);
+            $stmt->bindParam(':MDP_utilisateur', $hashpassword, PDO::PARAM_STR);
 
             //Execution de la requete
             if($stmt->execute()){
                 echo "<script>alert('Inscription réussie !');</script>";
-                header("Location: http://localhost/Messagerie/Messages_App/Authentification/Vue/Login.php",true,301);
+                header("Location: http://localhost/Messages_App/Authentification/Vue/Login.php",true,301);
                 exit();
             }
             else{

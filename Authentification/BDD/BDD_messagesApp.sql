@@ -53,7 +53,7 @@ BEGIN
 END;
 
 --recupere les infos des users s'il existe
-CREATE FUNCTION ObtenirInformationsUtilisateur
+ALTER FUNCTION ObtenirInformationsUtilisateur
 (
     @Email_utilisateur VARCHAR(60)
 )
@@ -61,9 +61,16 @@ RETURNS TABLE
 AS
 RETURN
 (
-    SELECT ID_utilisateur, Nom_utilisateur, Prenom_utilisateur, MDP_utilisateur
+    SELECT ID_utilisateur, Nom_utilisateur, Prenom_utilisateur, MDP_utilisateur, Role_utilisateur, Statut_utilisateur
     FROM Utilisateur
     WHERE Email_utilisateur = @Email_utilisateur
 );
+
+UPDATE Utilisateur
+SET MDP_utilisateur  = '$2y$10$xDfM8IiBCDTDwGADUlwpqOEv/V6D7rfybVTOdaq9WCA3GZmQUWRdS'
+WHERE Email_utilisateur = 'yoantioma4@gmail.com';
+
+USE Gestion_Messagerie;
+SELECT * FROM Utilisateur;
 
 
