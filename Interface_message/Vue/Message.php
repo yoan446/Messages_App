@@ -6,6 +6,7 @@ if (session_status() == PHP_SESSION_NONE) {
 
 //connection a la BDD
 include('../Controlleur/charger_contact.php');
+include('../Controlleur/Ajouter_message.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -34,10 +35,10 @@ include('../Controlleur/charger_contact.php');
         <?php foreach ($contacts as $contact) {
             ?>
             <a href="#" id="charge">
-                <div class="contact" onclick="charger()">
+                <div class="contact" onclick="charger(this)">
                     <img src="../Images/user.png" alt="">
-                    <span id="id_recepteur"><?= $contact['Nom_utilisateur'] . ' ' . $contact['Prenom_utilisateur'] ?></span>
-                    <h6 id="id_r"><?= $contact['ID_utilisateur'] ?></h6>
+                    <span class="id_recepteur"><?= $contact['Nom_utilisateur'] . ' ' . $contact['Prenom_utilisateur'] ?></span>
+                    <h6 class="id_r"><?= $contact['ID_utilisateur'] ?></h6>
                 </div>
             </a>
             <?php
@@ -59,11 +60,11 @@ include('../Controlleur/charger_contact.php');
             </div>
 
             <div class="saisie">
-                <form action="#" method="post">
+                <form action="./Message.php" method="post">
                     <input type="hidden" name="id_rf" id="id_rf">
                     <input type="file" name="fichier" id="fichier" accept=".jpg, .jpeg, .png, .gif, .mp4, .webm">
                     <input type="text" name="ecrire" id="ecrire">
-                    <button type="submit" name="submit"><img src="../Images/paperplane.png" alt=""></button>
+                    <button type="submit" name="submit_m"><img src="../Images/paperplane.png" alt=""></button>
                 </form>
             </div>
 

@@ -50,9 +50,11 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 // Fonction charger reste inchangée
-function charger(){
-    let id = document.getElementById('id_r').textContent;
-    let nom_recepteurs = document.getElementById('id_recepteur').textContent;
-    document.getElementById('nom_recepteur').textContent = nom_recepteurs;
+function charger(element){
+    let id = element.querySelector('.id_r').textContent;
+    let nom_recepteur = element.querySelector('.id_recepteur').textContent;
+    
+    document.getElementById('nom_recepteur').textContent = nom_recepteur;
     document.getElementById('id_rf').value = id;
 }
+
