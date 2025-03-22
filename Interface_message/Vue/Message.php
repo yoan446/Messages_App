@@ -8,6 +8,7 @@ if (session_status() == PHP_SESSION_NONE) {
 include('../Controlleur/charger_contact.php');
 include('../Controlleur/Ajouter_message.php');
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,18 +32,15 @@ include('../Controlleur/Ajouter_message.php');
         <div class="discussion">
             <input type="text" name="recherche" id="rechercche" placeholder="Rechercher un contact...">
 
-            
-        <?php foreach ($contacts as $contact) {
-            ?>
-            <a href="#" id="charge">
-                <div class="contact" onclick="charger(this)">
-                    <img src="../Images/user.png" alt="">
-                    <span class="id_recepteur"><?= $contact['Nom_utilisateur'] . ' ' . $contact['Prenom_utilisateur'] ?></span>
-                    <h6 class="id_r"><?= $contact['ID_utilisateur'] ?></h6>
-                </div>
-            </a>
-            <?php
-        }?>
+            <?php foreach ($contacts as $contact) { ?>
+                <a href="#" id="charge">
+                    <div class="contact" onclick="charger(this)">
+                        <img src="../Images/user.png" alt="">
+                        <span class="id_recepteur"><?= $contact['Nom_utilisateur'] . ' ' . $contact['Prenom_utilisateur'] ?></span>
+                        <h6 class="id_r"><?= $contact['ID_utilisateur'] ?></h6>
+                    </div>
+                </a>
+            <?php } ?>
 
         </div>
 
@@ -60,12 +58,12 @@ include('../Controlleur/Ajouter_message.php');
             </div>
 
             <div class="saisie">
-                <form action="./Message.php" method="post">
+                <form action="Message.php" method="post" enctype="multipart/form-data">
                     <input type="hidden" name="id_rf" id="id_rf">
                     <input type="file" name="fichier" id="fichier" accept=".jpg, .jpeg, .png, .gif, .mp4, .webm">
                     <input type="text" name="ecrire" id="ecrire">
-                    <button type="submit" name="submit_m"><img src="../Images/paperplane.png" alt=""></button>
-                </form>
+                    <input type="submit" name="envoie" value="" style="background-image: url('../Images/paperplane.png'); background-size: cover; width: 40px; height: 40px; border: none; background-color:transparent;">
+                    </form>
             </div>
 
         </div>

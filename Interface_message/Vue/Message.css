@@ -142,11 +142,15 @@
     background-color: white;
     border: solid 1px #55a2c9;
     border-radius: 5px;
-    top: 30px;
+    top: 85px;
 
 }
 .media{
     text-align: center;
+}
+.saisie form{
+    position: relative;
+    top: 8px;
 }
 
 .saisie input[type="text"] {
@@ -160,24 +164,12 @@
     right: 40px;
    
 }
-
-.saisie button {
+.saisie input[type="submit"] {
     position: relative;
-    background-color: transparent;
-    border: none; /* Supprime la bordure par défaut */
-    border-radius: 4px; /* Coins arrondis */
-    cursor: pointer; /* Change le curseur en main au survol */
-    padding: 10px; /* Ajoute du rembourrage au bouton */
-    right: 20px;
+    bottom: 9px;
 }
 
-.saisie button img {
-    width: 35px; /* Ajustez la taille de l'image dans le bouton si nécessaire */
-    height: auto; /* Garde le ratio de l'image */
-    top: 3px;
-    position: relative;
-    right: 10px;
-}
+
 
 .chat{
     overflow-y: auto;
@@ -191,11 +183,12 @@
 }
 input[type=file]::file-selector-button {
     position: relative;
+    top: 5px;
     border: none;
     background: #1376A7;
     padding: 8px 12px;
     color: #fff;
     cursor: pointer;
     margin-left: 10px;
-  }
+}
   
