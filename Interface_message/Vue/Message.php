@@ -6,7 +6,7 @@ if (session_status() == PHP_SESSION_NONE) {
 
 //connection a la BDD
 include('../Controlleur/charger_contact.php');
-include('../Controlleur/Ajouter_message.php');
+include('../Controlleur/Envoie_message.php')
 ?>
 
 <!DOCTYPE html>
@@ -47,24 +47,20 @@ include('../Controlleur/Ajouter_message.php');
         <div class="messages">
             <div class="chat">
                 <div class="envoyeur">
-                    <div class="media"><img src="" alt=""></div>
-                    <span>Comment vous allez?</span>
+                    <span>        </span>
                 </div>
 
                 <div class="receveur">
-                    <span>Je vais bien et vous?</span>
+                    <span></span>
                 </div>
                 
             </div>
 
-            <div class="saisie">
-                <form action="Message.php" method="post" enctype="multipart/form-data">
-                    <input type="hidden" name="id_rf" id="id_rf">
-                    <input type="file" name="fichier" id="fichier" accept=".jpg, .jpeg, .png, .gif, .mp4, .webm">
-                    <input type="text" name="ecrire" id="ecrire">
-                    <input type="submit" name="envoie" value="" style="background-image: url('../Images/paperplane.png'); background-size: cover; width: 40px; height: 40px; border: none; background-color:transparent;">
-                    </form>
-            </div>
+           <form action="Message.php" method="post" class="formilaire">
+                <input type="hidden" name="copie_id" id="copie_id">
+                <input type="text" name="message" id="message">
+                <input type="submit" value="Envoyer" id="envoyer" name="envoyer">
+           </form>
 
         </div>
     </div>  

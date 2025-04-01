@@ -1,51 +1,31 @@
 document.addEventListener("DOMContentLoaded", function() {
-    const form = document.querySelector('.saisie form'); // Sélectionne le formulaire
-    const inputText = document.getElementById('ecrire'); // Sélectionne le champ de saisie
-    const inputFile = document.getElementById('fichier'); // Sélectionne le champ de fichier
+    const form = document.querySelector('.formilaire'); // Sélectionne le formulaire
+    const inputText = document.getElementById('message'); // Sélectionne le champ de saisie
+    const inputHidden = document.getElementById('copie_id'); // Sélectionne le champ caché
     const messagesDiv = document.querySelector('.messages .chat'); // Sélectionne la div pour les messages
 
     form.addEventListener('submit', function(event) {
         event.preventDefault(); // Empêche le rechargement de la page
 
-        const messageText = inputText.value; // Récupère le texte du champ de saisie
-        const file = inputFile.files[0]; // Récupère le fichier sélectionné
+        const formData = new FormData(form); // Crée un objet FormData à partir du formulaire
 
-        if (messageText.trim() !== "" || file) { // Vérifie que le message ou le fichier n'est pas vide
-            const messageDiv = document.createElement('div'); // Crée un nouvel élément div pour le message
+        fetch('../Controlleur/Envoie_Message.php', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.text())
+        .then(data => {
+            // Crée un nouvel élément div pour le message
+            const messageDiv = document.createElement('div'); 
             messageDiv.classList.add('envoyeur'); // Ajoute la classe 'envoyeur'
-
-            if (messageText.trim() !== "") {
-                const textSpan = document.createElement('span');
-                textSpan.textContent = messageText;
-                messageDiv.appendChild(textSpan);
-            }
-
-            if (file) {
-                const fileType = file.type.split('/')[0];
-                if (fileType === 'image') {
-                    const image = document.createElement('img');
-                    image.src = URL.createObjectURL(file);
-                    image.width = 200; // Ajustez la largeur de l'image
-                    const mediaDiv = document.createElement('div');
-                    mediaDiv.classList.add('media');
-                    mediaDiv.appendChild(image);
-                    messageDiv.appendChild(mediaDiv);
-                } else if (fileType === 'video') {
-                    const video = document.createElement('video');
-                    video.src = URL.createObjectURL(file);
-                    video.width = 200; // Ajustez la largeur de la vidéo
-                    video.controls = true; // Active les contrôles de la vidéo
-                    const mediaDiv = document.createElement('div');
-                    mediaDiv.classList.add('media');
-                    mediaDiv.appendChild(video);
-                    messageDiv.appendChild(mediaDiv);
-                }
-            }
-
+            messageDiv.innerHTML = `<span>${inputText.value}</span>`; // Affiche le contenu du message
             messagesDiv.appendChild(messageDiv); // Ajoute le nouveau message à la div des messages
-            inputText.value = ""; // Réinitialise le champ de saisie
-            inputFile.value = ""; // Réinitialise le champ de fichier
-        }
+
+            // Réinitialise les champs
+            inputText.value = ""; 
+            inputHidden.value = ""; 
+        })
+        .catch(error => console.error('Erreur:', error));
     });
 });
 
@@ -55,6 +35,18 @@ function charger(element){
     let nom_recepteur = element.querySelector('.id_recepteur').textContent;
     
     document.getElementById('nom_recepteur').textContent = nom_recepteur;
-    document.getElementById('id_rf').value = id;
+    document.getElementById('copie_id').value = id;
 }
+
+
+// Fonction charger reste inchangée
+function charger(element){
+    let id = element.querySelector('.id_r').textContent;
+    let nom_recepteur = element.querySelector('.id_recepteur').textContent;
+    
+    document.getElementById('nom_recepteur').textContent = nom_recepteur;
+    document.getElementById('copie_id').value = id;
+}
+
+
 

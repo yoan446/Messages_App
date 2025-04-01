@@ -145,30 +145,33 @@
     top: 85px;
 
 }
-.media{
-    text-align: center;
-}
-.saisie form{
+.formilaire{
     position: relative;
-    top: 8px;
+    background-color: #1376A7;
+    width: 93%;
+    top: 10%;
+    padding: 5px;
+    margin-left: 20px;
+    height: 45px;
 }
+#message{
+    position: relative;
+    min-width: 94%;
+    min-height: 30px;
+    top: 3px;
+    font-family: "Roboto", serif;
+    border: none;
+}
+#envoyer{
+    position: relative;
+    font-family: "Roboto", serif;
+    min-height: 30px;
+    padding: 3px;
+    top: 3px;
+    min-width: 62px;
+    color: #1376A7;
 
-.saisie input[type="text"] {
-    padding: 4px; /* Ajoute du rembourrage à l'input */
-    border: 1px solid #ccc; /* Bordure grise claire */
-    border-radius: 4px; /* Coins arrondis */
-    width: 880px; /* Largeur de l'input, ajustez selon vos besoins */
-    position: relative;
-    bottom: 9px;
-    padding: 7px;
-    right: 40px;
-   
 }
-.saisie input[type="submit"] {
-    position: relative;
-    bottom: 9px;
-}
-
 
 
 .chat{
@@ -177,18 +180,5 @@
     height: 70vh;
 }
 
-#fichier{
-    position: relative;
-    bottom: 12px;
-}
-input[type=file]::file-selector-button {
-    position: relative;
-    top: 5px;
-    border: none;
-    background: #1376A7;
-    padding: 8px 12px;
-    color: #fff;
-    cursor: pointer;
-    margin-left: 10px;
-}
+
   
